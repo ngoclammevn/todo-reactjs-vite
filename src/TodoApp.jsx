@@ -6,6 +6,7 @@ import { Plus, Trash2 } from "lucide-react";
 export default function TodoApp() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
+  const [confirmId, setConfirmId] = useState(null);
 
   function addTodo(e) {
     e.preventDefault();
@@ -23,8 +24,10 @@ export default function TodoApp() {
     ));
   }
 
+
   function removeTodo(id) {
     setTodos(todos.filter(todo => todo.id !== id));
+    setConfirmId(null);
   }
 
   return (
@@ -68,13 +71,40 @@ export default function TodoApp() {
               {todo.text}
             </span>
             <button
-              onClick={() => removeTodo(todo.id)}
+              onClick={() => setConfirmId(todo.id)}
               className="flex items-center justify-center bg-transparent border-none text-red-600 text-xl cursor-pointer ml-2 hover:text-red-800 focus:outline-none focus:ring-2 focus:ring-red-400"
               title="Remove"
               aria-label="Remove todo"
             >
               <Trash2 size={20} />
             </button>
+                {/* Confirm Delete Modal */}
+                {confirmId !== null && (
+                  <div
+                    className="fixed inset-0 z-50 flex items-center justify-center bg-black/60"
+                    role="dialog"
+                    aria-modal="true"
+                  >
+                    <div className="bg-white rounded-xl shadow-lg p-6 w-full max-w-xs flex flex-col items-center">
+                      <div className="text-lg font-semibold mb-4 text-center">Are you sure you want to delete this item?</div>
+                      <div className="flex gap-4">
+                        <button
+                          className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          onClick={() => setConfirmId(null)}
+                          autoFocus
+                        >
+                          Cancel
+                        </button>
+                        <button
+                          className="px-4 py-2 rounded bg-red-600 text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-400"
+                          onClick={() => removeTodo(confirmId)}
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )}
           </li>
         ))}
       </ul>
