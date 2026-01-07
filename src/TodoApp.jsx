@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./TodoApp.css";
 
 export default function TodoApp() {
   const [todos, setTodos] = useState([]);
@@ -26,26 +25,29 @@ export default function TodoApp() {
   }
 
   return (
-    <div className="todo-app">
-      <h2>Todo App</h2>
-      <form onSubmit={addTodo} className="todo-form">
+    <div className="w-full max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+      <h2 className="text-2xl font-bold text-center mb-4">Todo App</h2>
+      <form onSubmit={addTodo} className="flex gap-2 mb-4">
         <input
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder="Add a new todo"
-          className="todo-input"
+          className="flex-1 p-2 border border-gray-300 rounded"
         />
-        <button type="submit" className="todo-add-btn">Add</button>
+        <button type="submit" className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-800">Add</button>
       </form>
-      <ul className="todo-list">
+      <ul className="list-none p-0 m-0">
         {todos.map(todo => (
           <li
             key={todo.id}
-            className={"todo-item" + (todo.completed ? " completed" : "")}
+            className={
+              `flex items-center justify-between py-2 border-b border-gray-200` +
+              (todo.completed ? " line-through text-gray-400" : "")
+            }
           >
             <span
               onClick={() => toggleTodo(todo.id)}
-              className="todo-text"
+              className="flex-1 cursor-pointer"
               title="Toggle complete"
               data-testid="todo-text"
             >
@@ -53,7 +55,7 @@ export default function TodoApp() {
             </span>
             <button
               onClick={() => removeTodo(todo.id)}
-              className="todo-remove-btn"
+              className="bg-none border-none text-red-600 text-xl cursor-pointer ml-2 hover:text-red-800"
               title="Remove"
             >
               ×
