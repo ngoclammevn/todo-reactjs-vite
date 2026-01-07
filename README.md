@@ -1,4 +1,27 @@
-# React + Vite
+
+# Todo App (React + Vite)
+
+This project now includes a minimal Todo App built with React and Vite.
+
+## Features
+- Add, view, complete, and remove todo items
+- Simple, clean UI
+- All logic and UI in a single-page app
+
+## Usage
+1. Install dependencies:
+	```sh
+	npm install
+	```
+2. Start the development server:
+	```sh
+	npm run dev
+	```
+3. Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+
+
+## Original Vite/React Template Info
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

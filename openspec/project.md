@@ -1,31 +1,47 @@
 # Project Context
 
 ## Purpose
-[Describe your project's purpose and goals]
+A simple, modern Todo application to manage tasks, built for learning and demonstration purposes.
 
 ## Tech Stack
-- [List your primary technologies]
-- [e.g., TypeScript, React, Node.js]
+- React (with JSX)
+- Vite (build tool)
+- JavaScript (ES6+)
+- CSS (with modular styles)
+- Node.js (for development tooling)
 
 ## Project Conventions
 
 ### Code Style
-[Describe your code style preferences, formatting rules, and naming conventions]
+- Use Prettier and ESLint for formatting and linting
+- 2-space indentation
+- CamelCase for variables and functions
+- PascalCase for React components
+- Functional components and hooks preferred
 
 ### Architecture Patterns
-[Document your architectural decisions and patterns]
+- Component-based structure (React)
+- State managed locally in components (no global state manager)
+- CSS Modules for component styles
 
 ### Testing Strategy
-[Explain your testing approach and requirements]
+- (If tests are present) Use Jest and React Testing Library
+- Focus on unit and component tests
+- Manual testing for UI/UX
 
 ### Git Workflow
-[Describe your branching strategy and commit conventions]
+- Feature branches from main
+- Conventional commit messages (e.g., feat:, fix:, chore:)
+- Pull requests for all changes
 
 ## Domain Context
-[Add domain-specific knowledge that AI assistants need to understand]
+- Task = { id, text, completed }
+- Users can add, toggle, and remove todos
 
 ## Important Constraints
-[List any technical, business, or regulatory constraints]
+- No backend; all data is in-memory
+- Must run in modern browsers
+- Keep dependencies minimal
 
 ## External Dependencies
-[Document key external services, APIs, or systems]
+- None required for core app; only dev dependencies (Vite, ESLint, Prettier, etc.)
