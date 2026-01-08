@@ -1,10 +1,26 @@
+
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { TodoList } from './features/todo/TodoList'
 
 function App() {
+
   const [count, setCount] = useState(0)
+  const [todos, setTodos] = useState([
+    { id: '1', text: 'Learn React', completed: false },
+    { id: '2', text: 'Build a Todo App', completed: false },
+    { id: '3', text: 'Profit!', completed: false },
+  ])
+
+  const handleToggle = (id) => {
+    setTodos((prev) =>
+      prev.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    )
+  }
 
   return (
     <>
@@ -24,6 +40,10 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
+      </div>
+      <div className="card">
+        <h2>Todo List</h2>
+        <TodoList items={todos} onToggle={handleToggle} />
       </div>
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
