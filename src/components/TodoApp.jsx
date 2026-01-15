@@ -111,7 +111,7 @@ export default function TodoApp() {
         {confirmId !== null && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-30 z-50">
             <div className="bg-white rounded-xl shadow-lg p-6 w-80 text-center">
-              <div className="mb-4 text-lg text-gray-800 font-medium">Bạn có chắc muốn xóa todo này không?</div>
+              <div className="mb-4 text-lg text-gray-800 font-medium">Bạn có chắc muốn xóa todo không?</div>
               <div className="flex justify-center gap-4 mt-4">
                 <button
                   className="px-4 py-2 rounded-lg bg-gray-200 text-gray-700 hover:bg-gray-300"
