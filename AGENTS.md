@@ -15,7 +15,4 @@ Use `@/openspec/AGENTS.md` to learn:
 
 Keep this managed block so 'openspec update' can refresh the instructions.
 
-WRITE ALL DOCUMENT SPECS, CHANGE, TASK,... IN VIETNAMESE, BUT KEEP TECHNICAL TERMS IN ENGLISH (E.G., 'LOAD BALANCER', 'LATENCY', 'MIDDLEWARE') TO ENSURE TECHNICAL ACCURACY AND READABILITY
-
-
 <!-- OPENSPEC:END -->
